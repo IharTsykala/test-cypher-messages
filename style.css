@@ -5,6 +5,8 @@ body {
   background-color: #a7a7a7;
   display: grid;
   grid-template-rows: 10% 90%;
+  width: 100vw;
+  height: 100vh;
 }
 
 header {
@@ -27,6 +29,8 @@ div {
   height: 80%;
   align-self: center;
   background-color: white;
+  text-transform: lowercase;
+  overflow-y: scroll;
 }
 
 button {
