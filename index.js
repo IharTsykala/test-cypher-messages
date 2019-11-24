@@ -3,7 +3,7 @@ const button = document.querySelector("#button")
 const answerArea = document.querySelector("#answerArea")
 
 const decryptionTextArea = () => {
-  const bufferString = textArea.value.toLowerCase()
+  const bufferString = textArea.value
 
   if (bufferString.length > 100000) return "More 100000 letters"
 
@@ -20,7 +20,6 @@ const decryptionTextArea = () => {
       textAnswerArea.push(item)
     }
   })
-  console.log(textAnswerArea)
   return textAnswerArea.join("")
 }
 
