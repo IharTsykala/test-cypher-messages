@@ -10,16 +10,14 @@ const decryptionTextArea = () => {
   const bufferArray = bufferString.trim().split("")
   const textAnswerArea = []
 
-  bufferArray.forEach((item, index) => {
-    if (
-      (bufferArray[index] !== bufferArray[index + 1] &&
-        bufferArray[index] !== bufferArray[index - 1]) ||
-      (bufferArray[index] === bufferArray[index + 1] &&
-        bufferArray[index] === bufferArray[index - 1])
-    ) {
-      textAnswerArea.push(item)
+  for (let i = 0; i < bufferArray.length; i++) {
+    if (bufferArray[i] === bufferArray[i + 1]) {
+      i += 1
+      continue
     }
-  })
+    textAnswerArea.push(bufferArray[i])
+  }
+
   return textAnswerArea.join("")
 }
 
@@ -28,5 +26,6 @@ const fillAnswerArea = () => {
 }
 
 button.addEventListener("click", () => {
+  answerArea.innerHTML = ""
   fillAnswerArea(textArea.value)
 })
