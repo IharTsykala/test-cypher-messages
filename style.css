@@ -1,0 +1,38 @@
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: #a7a7a7;
+  display: grid;
+  grid-template-rows: 10% 90%;
+}
+
+header {
+  background-color: #7a7a7a;
+  display: grid;
+  justify-content: center;
+  align-content: center;
+}
+
+main {
+  display: grid;
+  grid-template-rows: 40% 20% 40%;
+}
+
+textarea,
+div {
+  width: 80%;
+  display: grid;
+  justify-self: center;
+  height: 80%;
+  align-self: center;
+  background-color: white;
+}
+
+button {
+  display: grid;
+  width: 10%;
+  height: 25%;
+  justify-self: end;
+  margin-right: 10%;
+}
