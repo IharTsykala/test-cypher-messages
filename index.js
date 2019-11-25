@@ -7,18 +7,22 @@ const decryptionTextArea = () => {
 
   if (bufferString.length > 100000) return "More 100000 letters"
 
-  const bufferArray = bufferString.trim().split("")
+  const bufferArray = bufferString.split("")
   const textAnswerArea = []
 
   for (let i = 0; i < bufferArray.length; i++) {
-    if (bufferArray[i] === bufferArray[i + 1]) {
+    if (
+      bufferArray[i] === bufferArray[i + 1] &&
+      bufferArray[i] !== "\n" &&
+      bufferArray[i] !== "  "
+    ) {
       i += 1
       continue
     }
     textAnswerArea.push(bufferArray[i])
   }
 
-  return textAnswerArea.join("")
+  return textAnswerArea.join("").replace(/\n/g, "<br>")
 }
 
 const fillAnswerArea = () => {
