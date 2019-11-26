@@ -3,26 +3,21 @@ const button = document.querySelector("#button")
 const answerArea = document.querySelector("#answerArea")
 
 const decryptionTextArea = () => {
-  const bufferString = textArea.value
+  const textAnswerArea = textArea.value.replace(/[^a-z]/g, "").split("")
+  if (textAnswerArea.length > 100000) textAnswerArea.length = 100000
 
-  if (bufferString.length > 100000) return "More 100000 letters"
-
-  const bufferArray = bufferString.split("")
-  const textAnswerArea = []
-
-  for (let i = 0; i < bufferArray.length; i++) {
-    if (
-      bufferArray[i] === bufferArray[i + 1] &&
-      bufferArray[i] !== "\n" &&
-      bufferArray[i] !== "  "
-    ) {
-      i += 1
-      continue
+  for (let i = 0; i < textAnswerArea.length - 1; i++) {
+    if (textAnswerArea[i] === textAnswerArea[i + 1]) {
+      textAnswerArea.splice(i, 2)
+      i--
+      if (i !== 0) {
+        i--
+      } else {
+        continue
+      }
     }
-    textAnswerArea.push(bufferArray[i])
   }
-
-  return textAnswerArea.join("").replace(/\n/g, "<br>")
+  return textAnswerArea.join("")
 }
 
 const fillAnswerArea = () => {
