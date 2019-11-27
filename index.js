@@ -15,8 +15,6 @@ const decryptionTextArea = () => {
       i--
       if (i > 0) {
         i--
-      } else {
-        continue
       }
     }
   }
