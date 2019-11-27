@@ -9,8 +9,11 @@ const decryptionTextArea = () => {
   for (let i = 0; i < textAnswerArea.length - 1; i++) {
     if (textAnswerArea[i] === textAnswerArea[i + 1]) {
       textAnswerArea.splice(i, 2)
+      if (i === 1) {
+        i--
+      }
       i--
-      if (i !== 0) {
+      if (i > 0) {
         i--
       } else {
         continue

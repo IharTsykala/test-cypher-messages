@@ -30,7 +30,7 @@ div {
   align-self: center;
   background-color: white;
   text-transform: lowercase;
-  overflow-y: scroll;
+  overflow: scroll;
 }
 
 button {
